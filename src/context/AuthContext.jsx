@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/check-auth', { withCredentials: true });
+        const response = await axios.get('https://invoice-management-server.vercel.app/check-auth', { withCredentials: true });
         setUser(response.data.user);
       } catch (error) {
         console.error('Auth check failed:', error);
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+      await axios.post('https://invoice-management-server.vercel.app/logout', {}, { withCredentials: true });
       setUser(null);
       toast.success('Logged out successfully!');
     } catch (error) {

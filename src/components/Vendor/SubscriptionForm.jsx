@@ -45,7 +45,7 @@ import { toast } from 'react-toastify';
 
     // If no immediate error, proceed to create subscription on your backend
     try {
-      const response = await axios.post('http://localhost:5000/vendor/create-subscription', {
+      const response = await axios.post('https://invoice-management-server.vercel.app/vendor/create-subscription', {
         vendorUsername,
         paymentMethodId: setupIntent.payment_method,
       }, { withCredentials: true });

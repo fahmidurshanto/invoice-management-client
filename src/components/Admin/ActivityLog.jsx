@@ -15,7 +15,7 @@ const ActivityLog = () => {
         if (searchTerm) params.search = searchTerm;
         if (filterEventType) params.eventType = filterEventType;
 
-        const response = await axios.get('http://localhost:5000/admin/activity-log', { params, withCredentials: true });
+        const response = await axios.get('https://invoice-management-server.vercel.app/admin/activity-log', { params, withCredentials: true });
         setLogs(response.data);
       } catch (error) {
         toast.error(error.response.data.message || 'Failed to fetch activity logs.');

@@ -17,7 +17,7 @@ const ChargeCustomer = () => {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:5000/vendor/customers/${user.username}`, { withCredentials: true });
+        const response = await axios.get(`https://invoice-management-server.vercel.app/vendor/customers/${user.username}`, { withCredentials: true });
         setCustomers(response.data);
       } catch (error) {
         console.error('Error fetching customers:', error);
@@ -37,7 +37,7 @@ const ChargeCustomer = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/create-payment-intent', {
+      const response = await axios.post('https://invoice-management-server.vercel.app/create-payment-intent', {
         customerId: selectedCustomer,
         amount: parseFloat(amount),
       }, { withCredentials: true });

@@ -13,7 +13,7 @@ const StripeConnectSuccess = () => {
       if (user && user.username) {
         try {
           // Fetch the updated vendor data using the new endpoint
-          const response = await axios.get('http://localhost:5000/vendor/get-current-user', { withCredentials: true });
+          const response = await axios.get('https://invoice-management-server.vercel.app/vendor/get-current-user', { withCredentials: true });
           if (response.status === 200) {
             login(response.data.vendor); // Update AuthContext
             toast.success('Stripe account connected successfully!');

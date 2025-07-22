@@ -16,7 +16,7 @@ const PayoutHistory = () => {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:5000/vendor/payout-history', { withCredentials: true });
+        const response = await axios.get('https://invoice-management-server.vercel.app/vendor/payout-history', { withCredentials: true });
         setPayouts(response.data);
       } catch (error) {
         console.error('Error fetching payout history:', error);

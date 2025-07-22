@@ -12,7 +12,7 @@ const VendorDashboard = () => {
   const fetchCustomers = async () => {
     if (!user || !user.username) return;
     try {
-      const response = await axios.get(`http://localhost:5000/vendor/customers/${user.username}`, { withCredentials: true });
+      const response = await axios.get(`https://invoice-management-server.vercel.app/vendor/customers/${user.username}`, { withCredentials: true });
       setCustomers(response.data);
     } catch (error) {
       console.error('Error fetching customers:', error);
@@ -23,7 +23,7 @@ const VendorDashboard = () => {
   const fetchInvoices = async () => {
     if (!user || !user.username) return;
     try {
-      const response = await axios.get(`http://localhost:5000/vendor/invoices/${user.username}`, { withCredentials: true });
+      const response = await axios.get(`https://invoice-management-server.vercel.app/vendor/invoices/${user.username}`, { withCredentials: true });
       setInvoices(response.data);
     } catch (error) {
       console.error('Error fetching invoices:', error);

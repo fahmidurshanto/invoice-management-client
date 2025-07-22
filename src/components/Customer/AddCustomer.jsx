@@ -20,15 +20,15 @@ const AddCustomer = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5000/create-customer', { name, email, phone });
+      const response = await axios.post('https://invoice-management-server.vercel.app/create-customer', { name, email, phone });
       const customerId = response.data.customerId;
 
       const vendorUsername = user.username; 
 
-      await axios.post('http://localhost:5000/vendor/add-customer', { vendorUsername, customerId }, { withCredentials: true });
+      await axios.post('https://invoice-management-server.vercel.app/vendor/add-customer', { vendorUsername, customerId }, { withCredentials: true });
 
       // Generate invite link using the new backend endpoint
-      const inviteLinkResponse = await axios.post('http://localhost:5000/customer/generate-invite-link', { customerId }, { withCredentials: true });
+      const inviteLinkResponse = await axios.post('https://invoice-management-server.vercel.app/customer/generate-invite-link', { customerId }, { withCredentials: true });
       const generatedInviteLink = inviteLinkResponse.data.inviteLink;
 
       toast.success(response.data.message + ` Customer ID: ${customerId}. Associated with vendor.`);

@@ -23,7 +23,7 @@ const RequestPayout = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/vendor/request-payout', {
+      const response = await axios.post('https://invoice-management-server.vercel.app/vendor/request-payout', {
         vendorUsername: user.username,
         amount: parseFloat(amount),
       }, { withCredentials: true });

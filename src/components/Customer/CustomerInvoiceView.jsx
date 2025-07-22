@@ -16,7 +16,7 @@ const CustomerInvoiceView = () => {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:5000/customer/invoices/${customerId}`, { withCredentials: true });
+        const response = await axios.get(`https://invoice-management-server.vercel.app/customer/invoices/${customerId}`, { withCredentials: true });
         setInvoices(response.data);
       } catch (error) {
         console.error('Error fetching invoices:', error);

@@ -23,7 +23,7 @@ const SaveCardForm = () => {
         return;
       }
       try {
-        const response = await axios.post('http://localhost:5000/create-setup-intent', { customerId }, { withCredentials: true });
+        const response = await axios.post('https://invoice-management-server.vercel.app/create-setup-intent', { customerId }, { withCredentials: true });
         setClientSecret(response.data.clientSecret);
       } catch (error) {
         console.error('Error fetching client secret:', error);

@@ -17,10 +17,10 @@ const Login = () => {
     try {
       let response;
       if (username === 'admin') {
-        response = await axios.post('http://localhost:5000/admin/login', { username, password }, { withCredentials: true });
+        response = await axios.post('https://invoice-management-server.vercel.app/admin/login', { username, password }, { withCredentials: true });
         login({ username: response.data.user.username, role: response.data.user.role });
       } else {
-        response = await axios.post('http://localhost:5000/login', { username, password }, { withCredentials: true });
+        response = await axios.post('https://invoice-management-server.vercel.app/login', { username, password }, { withCredentials: true });
         login(response.data.vendor);
       }
       toast.success(response.data.message);

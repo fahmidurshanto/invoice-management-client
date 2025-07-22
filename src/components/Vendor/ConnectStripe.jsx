@@ -16,7 +16,7 @@ const ConnectStripe = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/vendor/create-stripe-connect-account', {
+      const response = await axios.post('https://invoice-management-server.vercel.app/vendor/create-stripe-connect-account', {
         vendorUsername: user.username,
       }, { withCredentials: true });
       if (response.data.url) {

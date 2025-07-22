@@ -115,7 +115,7 @@ JWT_SECRET=supersecretjwtkey # Use a strong, random key in production
 ```bash
 npm start
 ```
-The server will run on `http://localhost:5000`.
+The server will run on `https://invoice-management-server.vercel.app`.
 
 ### 3. Frontend Setup
 Open a new terminal and navigate to the `invoice-management-client` directory:

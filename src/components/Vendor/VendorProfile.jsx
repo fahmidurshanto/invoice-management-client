@@ -13,7 +13,7 @@ const VendorProfile = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5000/vendor/cancel-subscription', { vendorUsername: user.username }, { withCredentials: true });
+      const response = await axios.post('https://invoice-management-server.vercel.app/vendor/cancel-subscription', { vendorUsername: user.username }, { withCredentials: true });
       toast.success(response.data.message);
       login(response.data.vendor); // Update AuthContext with new vendor data
     } catch (error) {

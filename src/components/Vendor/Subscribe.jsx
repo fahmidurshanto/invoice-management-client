@@ -22,7 +22,7 @@ const Subscribe = () => {
         return;
       }
       try {
-        const response = await axios.post('http://localhost:5000/vendor/create-subscription-setup-intent', {},
+        const response = await axios.post('https://invoice-management-server.vercel.app/vendor/create-subscription-setup-intent', {},
           { withCredentials: true }
         );
         setClientSecret(response.data.clientSecret);

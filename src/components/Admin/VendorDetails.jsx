@@ -11,7 +11,7 @@ const VendorDetails = () => {
   useEffect(() => {
     const fetchVendorDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/admin/vendor-details/${username}`, { withCredentials: true });
+        const response = await axios.get(`https://invoice-management-server.vercel.app/admin/vendor-details/${username}`, { withCredentials: true });
         setVendorDetails(response.data);
       } catch (error) {
         console.error('Error fetching vendor details:', error);

@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const fetchPendingVendors = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/admin/vendors/pending', { withCredentials: true });
+      const response = await axios.get('https://invoice-management-server.vercel.app/admin/vendors/pending', { withCredentials: true });
       setPendingVendors(response.data);
     } catch (error) {
       console.error('Error fetching pending vendors:', error);
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
       if (filterApproved) params.approved = filterApproved;
       if (filterSubscription) params.subscriptionStatus = filterSubscription;
 
-      const response = await axios.get('http://localhost:5000/admin/vendors/all', { params, withCredentials: true });
+      const response = await axios.get('https://invoice-management-server.vercel.app/admin/vendors/all', { params, withCredentials: true });
       setAllVendors(response.data);
     } catch (error) {
       console.error('Error fetching all vendors:', error);
@@ -44,7 +44,7 @@ const AdminDashboard = () => {
 
   const fetchAnalytics = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/admin/analytics', { withCredentials: true });
+      const response = await axios.get('https://invoice-management-server.vercel.app/admin/analytics', { withCredentials: true });
       setAnalytics(response.data);
     } catch (error) {
       console.error('Error fetching analytics:', error);
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
   const handleAdminLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/admin/login', { username: adminUsername, password: adminPassword }, { withCredentials: true });
+      const response = await axios.post('https://invoice-management-server.vercel.app/admin/login', { username: adminUsername, password: adminPassword }, { withCredentials: true });
       toast.success(response.data.message);
       if (response.status === 200) {
         setLoggedIn(true);
@@ -70,7 +70,7 @@ const AdminDashboard = () => {
 
   const handleApproveVendor = async (username) => {
     try {
-      const response = await axios.post('http://localhost:5000/admin/vendors/approve', { username }, { withCredentials: true });
+      const response = await axios.post('https://invoice-management-server.vercel.app/admin/vendors/approve', { username }, { withCredentials: true });
       toast.success(response.data.message);
       fetchPendingVendors(); // Refresh the list after approval
       fetchAllVendors(); // Refresh all vendors list as well

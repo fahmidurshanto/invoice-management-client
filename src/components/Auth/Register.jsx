@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/register', { username, password });
+      const response = await axios.post('https://invoice-management-server.vercel.app/register', { username, password });
       toast.success(response.data.message);
       // Optionally redirect to login after successful registration
       // navigate('/login');
