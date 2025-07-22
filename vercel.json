@@ -1,4 +1,3 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-  "timeout": 180
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
